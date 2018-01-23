@@ -1,0 +1,196 @@
+# X / Y
+
+- Poké Puff                            0
+  - puffs                              0
+  - count                              0x64
+- Bag                                  0x400
+  - held items                         0x400
+  - Key items                          0xa40
+  - TM/HM                              0xbc0
+  - medicine                           0xd68
+  - berries                            0xe68
+- Item info                            0x1000
+  - select items
+    - up                               0x100a
+    - right                            0x100c
+    - down                             0x100e
+    - left                             0x1011
+  - recent items (give, use)           0x1014
+- Adventure info                       0x1200
+  - resume year                        0x1204
+  - resume month                       0x1208
+  - resume day                         0x1209
+  - resume hour                        0x120b
+  - resume minute                      0x120c
+  - resume seconds                     0x120d
+  - seconds to start                   0x1218
+  - seconds to fame                    0x1220
+- Trainer1                             0x1400
+  - M                                  0x1402
+  - X                                  0x1410
+  - Z                                  0x1414
+  - Y                                  0x1418
+  - style                              0x154d
+- Play time                            0x1800
+  - played hours                       0x1800
+  - played minutes                     0x1802
+  - played seconds                     0x1803
+  - last saved                         0x1804
+- Accessories                          0x1a00
+- Trainer2                             0x4200
+  - money                              0x4208
+  - badges                             0x420c
+  - BP                                 0x423c
+  - Vivillon                           0x4250
+- PC Layout                            0x4400
+  - box names
+    - Box 1                            0x4400
+    - Box 2                            0x4422
+    - Box 3                            0x4444
+    - Box 4                            0x4466
+    - Box 5                            0x4488
+    - Box 6                            0x44aa
+    - Box 7                            0x44cc
+    - Box 8                            0x44ee
+    - Box 9                            0x4510
+    - Box 10                           0x4532
+    - Box 11                           0x4554
+    - Box 12                           0x4576
+    - Box 13                           0x4598
+    - Box 14                           0x45ba
+    - Box 15                           0x45dc
+    - Box 16                           0x45fe
+    - Box 17                           0x4620
+    - Box 18                           0x4642
+    - Box 19                           0x4664
+    - Box 20                           0x4686
+    - Box 21                           0x46a8
+    - Box 22                           0x46ca
+    - Box 23                           0x46ec
+    - Box 24                           0x470e
+    - Box 25                           0x4730
+    - Box 26                           0x4752
+    - Box 27                           0x4774
+    - Box 28                           0x4796
+    - Box 29                           0x47b8
+    - Box 30                           0x47da
+    - Box 31                           0x47fc
+  - backgrounds
+    - Box 1                            0x481e
+    - Box 2                            0x481f
+    - Box 3                            0x4820
+    - Box 4                            0x4821
+    - Box 5                            0x4822
+    - Box 6                            0x4823
+    - Box 7                            0x4824
+    - Box 8                            0x4825
+    - Box 9                            0x4826
+    - Box 10                           0x4827
+    - Box 11                           0x4828
+    - Box 12                           0x4829
+    - Box 13                           0x482a
+    - Box 14                           0x482b
+    - Box 15                           0x482c
+    - Box 16                           0x482d
+    - Box 17                           0x482e
+    - Box 18                           0x482f
+    - Box 19                           0x4830
+    - Box 20                           0x4831
+    - Box 21                           0x4832
+    - Box 22                           0x4833
+    - Box 23                           0x4834
+    - Box 24                           0x4835
+    - Box 25                           0x4836
+    - Box 26                           0x4837
+    - Box 27                           0x4838
+    - Box 28                           0x4839
+    - Box 29                           0x483a
+    - Box 30                           0x483b
+    - Box 31                           0x483c
+  - PC flags                           0x483d
+    - boxes unlocked                   0x483e
+  - last viewed box                    0x483f
+- Battle Box                           0x4a00
+- PSS                                  0x5000
+- Trainer card                         0x14000
+  - TID                                0x14000
+  - SID                                0x14002
+  - game                               0x14004
+  - gender                             0x14005
+  - multiplayer sprite ID              0x14007
+  - Game Sync ID                       0x14008
+  - sub-region                         0x14026
+  - country                            0x14027
+  - console region                     0x1402c
+  - language                           0x1402d
+  - OT (name)                          0x14048
+  - OT nickname                        0x14062
+  - saying 1                           0x1407c
+  - saying 2                           0x1409e
+  - saying 3                           0x140c0
+  - saying 4                           0x140e2
+  - saying 5                           0x14104
+  - Mega evolution unlocked            0x1414a
+- Party                                0x14200
+- Event const                          0x14a00
+  - flag                               0x14cfc
+- Pokédex                              0x15000
+  - language flags                     0x153c8
+  - Spinda                             0x15648
+- Fused                                0x16000
+- O-Power                              0x16a00
+- GTS                                  0x17800
+- Hall of Fame                         0x19400
+- Maison stats                         0x1b1c0
+- Daycare                              0x1b200
+  - slot 1
+    - occupied                         0x1b200
+    - EXP                              0x1b204
+    - offset                           0x1b208
+  - slot 2
+    - occupied                         0x1b2f0
+    - EXP                              0x1b2f4
+    - offset                           0x1b2f8
+  - has egg                            0x1b3e0
+  - RNG seed                           0x1b3e8
+- Berry Field                          0x1b800
+- Wondercard flags                     0x1bc00
+  - data                               0x1bd00
+- SUBE                                 0x1d890
+- PSS stats                            0x1e400
+- Super Training                       0x1f200
+- Link info                            0x1fe00
+- Box
+  - Box 1                              0x226e8
+  - Box 2                              0x227d0
+  - Box 3                              0x228b8
+  - Box 4                              0x229a0
+  - Box 5                              0x22a88
+  - Box 6                              0x22b70
+  - Box 7                              0x22c58
+  - Box 8                              0x22d40
+  - Box 9                              0x22e28
+  - Box 10                             0x22f10
+  - Box 11                             0x22ff8
+  - Box 12                             0x230e0
+  - Box 13                             0x231c8
+  - Box 14                             0x232b0
+  - Box 15                             0x23398
+  - Box 16                             0x23480
+  - Box 17                             0x23568
+  - Box 18                             0x23650
+  - Box 19                             0x23738
+  - Box 20                             0x23820
+  - Box 20                             0x23908
+  - Box 21                             0x239f0
+  - Box 22                             0x23ad8
+  - Box 23                             0x23bc0
+  - Box 24                             0x23ca8
+  - Box 25                             0x23d90
+  - Box 26                             0x23e78
+  - Box 27                             0x23f60
+  - Box 28                             0x24048
+  - Box 29                             0x24130
+  - Box 30                             0x24218
+  - Box 31                             0x24300
+- JPEG                                 0x57200

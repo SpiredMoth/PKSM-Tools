@@ -1,0 +1,65 @@
+# Diamond / Pearl
+
+- Adventure Info                       0
+  - seconds to start                   0x34
+  - seconds to fame                    0x3c
+- Trainer1                             0x64
+  - OT (name)                          0x64
+  - TID                                0x74
+  - SID                                0x76
+  - money                              0x78
+  - gender                             0x7c
+  - language                           0x7d
+  - badges                             0x7e
+  - sprite                             0x7f
+  - Game Corner coins                  0x84
+  - Played hours                       0x86
+  - Played minutes                     0x88
+  - Played seconds                     0x89
+- Party                                0x98
+- Item Pouch
+  - held item                          0x624
+  - key items                          0x8b8
+  - TMHM                               0x980
+  - mail                               0xb10
+  - medicine                           0xb40
+  - berry                              0xbe0
+  - ball                               0xce0
+  - battle                             0xd1c
+- Event const                          0xd9c
+  - Darkrai?                           0xe22
+  - Palkia?                            0xecc
+- Event flags                          0xfdc
+  - Darkrai?                           0x1027
+- Fly                                  0x1112
+- Poketch
+  - unlock count                       0x114d
+  - current app                        0x114e
+  - apps                               0x114f-0x1167, 0x1170
+  - Dot Artist byte                    0x1175
+- M                                    0x1238
+- PokeDex                              0x12dc
+  - dex upgrade 1                      0x1414
+  - dex upgrade 2                      0x1404
+  - dex upgrade 3                      0x1415
+  - dex upgrade 4                      0x1413
+- Daycare                              0x141c
+- X                                    0x25fa
+- Y                                    0x25fe
+- Z                                    0x2602
+- Underground stats
+  - people met                         0x3a2c
+  - gifts                              0x3a30
+  - spheres                            0x3a38
+  - fossils                            0x3a3c
+  - traps avoided                      0x3a44
+  - traps triggered                    0x3a48
+  - flags   0x3a60
+- BFF                                  0x5fca
+- BP                                   0x65f8
+- Honey                                0x72e4
+- Wondercard flags                     0xa6d0
+- Wondercard Data                      0xa7fc
+- General Block save count             0xc0f0
+- General block checksum               0xc0fe
+- Box                                  0xc104
