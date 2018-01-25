@@ -1,65 +1,116 @@
 # Diamond / Pearl
 
-- Adventure Info                       0
-  - seconds to start                   0x34
-  - seconds to fame                    0x3c
-- Trainer1                             0x64
-  - OT (name)                          0x64
-  - TID                                0x74
-  - SID                                0x76
-  - money                              0x78
-  - gender                             0x7c
-  - language                           0x7d
-  - badges                             0x7e
-  - sprite                             0x7f
-  - Game Corner coins                  0x84
-  - Played hours                       0x86
-  - Played minutes                     0x88
-  - Played seconds                     0x89
-- Party                                0x98
+Meaning                                 Offset        Length        Min Value   Max Value
+- Adventure Info                        0
+  - seconds to start                    0x34
+  - seconds to fame                     0x3c
+- Trainer1                              0x64
+  - OT (name)                           0x64          0x10?
+  - TID                                 0x74          2             0           65535
+  - SID                                 0x76          2             0           65535
+  - money                               0x78          4             0           999999
+  - gender                              0x7c          1             0           1
+  - language                            0x7d
+  - badges                              0x7e
+  - sprite                              0x7f
+  - Game Corner coins                   0x84          2             0           50000
+  - Played hours                        0x86          2             0           999
+  - Played minutes                      0x88          1             0           59
+  - Played seconds                      0x89          1             0           59
+- Party                                 0x98
 - Item Pouch
-  - held item                          0x624
-  - key items                          0x8b8
-  - TMHM                               0x980
-  - mail                               0xb10
-  - medicine                           0xb40
-  - berry                              0xbe0
-  - ball                               0xce0
-  - battle                             0xd1c
-- Event const                          0xd9c
-  - Darkrai?                           0xe22
-  - Palkia?                            0xecc
-- Event flags                          0xfdc
-  - Darkrai?                           0x1027
-- Fly                                  0x1112
+  - held item                           0x624
+  - key items                           0x8b8
+  - TMHM                                0x980
+  - mail                                0xb10
+  - medicine                            0xb40
+  - berry                               0xbe0
+  - ball                                0xce0
+  - battle                              0xd1c
+- Event const                           0xd9c
+  - Darkrai?                            0xe22
+  - Palkia?                             0xecc
+- Event flags                           0xfdc
+  - Darkrai?                            0x1027
+- Fly                                   0x1112
 - Poketch
-  - unlock count                       0x114d
-  - current app                        0x114e
-  - apps                               0x114f-0x1167, 0x1170
-  - Dot Artist byte                    0x1175
-- M                                    0x1238
-- PokeDex                              0x12dc
-  - dex upgrade 1                      0x1414
-  - dex upgrade 2                      0x1404
-  - dex upgrade 3                      0x1415
-  - dex upgrade 4                      0x1413
-- Daycare                              0x141c
-- X                                    0x25fa
-- Y                                    0x25fe
-- Z                                    0x2602
+  - unlocked apps                       0x114d        1             0           25
+  - current app                         0x114e        1
+  - Apps
+    - Digital Clock                     0x114f        1             0           1
+    - Calculator                        0x1150        1             0           1
+    - Memo Pad                          0x1151        1             0           1
+    - Pedometer                         0x1152        1             0           1
+    - Pokémon List                      0x1153        1             0           1
+    - Friendship Checker                0x1154        1             0           1
+    - Dowsing Machine                   0x1155        1             0           1
+    - Berry Searcher                    0x1156        1             0           1
+    - Day Care Checker                  0x1157        1             0           1
+    - Pokémon History                   0x1158        1             0           1
+    - Counter                           0x1159        1             0           1
+    - Analog Watch                      0x115a        1             0           1
+    - Marking Map                       0x115b        1             0           1
+    - Link Searcher                     0x115c        1             0           1
+    - Coin Toss                         0x115d        1             0           1
+    - Move Tester                       0x115e        1             0           1
+    - Calendar                          0x115f        1             0           1
+    - Dot Artist                        0x1160        1             0           1
+    - Roulette                          0x1161        1             0           1
+    - Trainer Counter                   0x1162        1             0           1
+    - Kitchen Timer                     0x1163        1             0           1
+    - Color Changer                     0x1164        1             0           1
+    - Match-up Checker                  0x1165        1             0           1
+    - Stopwatch                         0x1166        1             0           1
+    - Alarm Clock                       0x1167        1             0           1
+  - Pedometer steps                     0x116c?       2?            0           99999?
+  - ?                                   0x1170?       1             0           1
+  - Dot Artist byte                     0x1175
+- M                                     0x1238        2
+- PokeDex                               0x12dc
+  - dex upgrade 1                       0x1414
+  - dex upgrade 2                       0x1404
+  - dex upgrade 3                       0x1415
+  - dex upgrade 4                       0x1413
+- Daycare                               0x141c
+- X                                     0x25fa        2
+- Y                                     0x25fe        2
+- Z                                     0x2602        2
 - Underground stats
-  - people met                         0x3a2c
-  - gifts                              0x3a30
-  - spheres                            0x3a38
-  - fossils                            0x3a3c
-  - traps avoided                      0x3a44
-  - traps triggered                    0x3a48
-  - flags   0x3a60
-- BFF                                  0x5fca
-- BP                                   0x65f8
-- Honey                                0x72e4
-- Wondercard flags                     0xa6d0
-- Wondercard Data                      0xa7fc
-- General Block save count             0xc0f0
-- General block checksum               0xc0fe
-- Box                                  0xc104
+  - people met                          0x3a2c        2             0           ?
+  - gifts                               0x3a30
+  - spheres                             0x3a38
+  - fossils                             0x3a3c
+  - traps avoided                       0x3a44
+  - traps triggered                     0x3a48
+  - flags                               0x3a60        4             0           999999
+- Fashion Case                          0x4ba8
+  - Accessories                         0x4ba8
+  - Backdrops                           0x4bd0
+- Mail                                  0x4bec
+- BFF                                   0x5fca
+- BP                                    0x65f8        2             0           9999
+- Honey                                 0x72e4
+- Wondercard flags                      0xa6d0
+- Wondercard Data                       0xa7fc
+- General Block save count              0xc0f0
+- General block checksum                0xc0fe
+- Box                                   0xc104
+  - Box 1                               0xc104
+  - Box 2                               0xd0f4
+  - Box 3                               0xe0e4
+  - Box 4                               0xf0d4
+  - Box 5                               0x100c4
+  - Box 6                               0x110b4
+  - Box 7                               0x120a4
+  - Box 8                               0x13094
+  - Box 9                               0x14084
+  - Box 10                              0x15074
+  - Box 11                              0x16064
+  - Box 12                              0x17054
+  - Box 13                              0x18044
+  - Box 14                              0x19034
+  - Box 15                              0x1a024
+  - Box 16                              0x1b014
+  - Box 17                              0x1c004
+  - Box 18                              0x1cff4
+- Storage block checksum                0x1e2de
