@@ -2,18 +2,18 @@
 
 Meaning                                 Offset        Length        Min Value   Max Value
 - Adventure Info                        0
-  - seconds to start                    0x34
-  - seconds to fame                     0x3c
+  - seconds to start                    0x34          4
+  - seconds to fame                     0x3c          4
 - Trainer1                              0x64
   - OT (name)                           0x64          0x10?
   - TID                                 0x74          2             0           65535
   - SID                                 0x76          2             0           65535
   - money                               0x78          4             0           999999
   - gender                              0x7c          1             0           1
-  - language                            0x7d          1
-  - badges                              0x7e          1
+  - language                            0x7d          1             0           8
+  - Johto badges                        0x7e          1             0           255
   - sprite                              0x7f          1
-  - badges16                            0x83          1
+  - Kanto Badges                        0x83          1             0           255
   - Game Corner coins                   0x84          2             0           50000
   - Played hours                        0x86          2             0           999
   - Played minutes                      0x88          1             0           59
@@ -28,7 +28,10 @@ Meaning                                 Offset        Length        Min Value   
   - berry                               0xc04
   - ball                                0xd04
   - battle                              0xd64
+  - first registered item               0xde0         2
+  - second registered item              0xde2         2
 - Event const                           0xde4
+  - starter                             0xe44
 - Prints                                0xe7e
 - legendary beasts                      0xf26
 - Event flag                            0x10c4
@@ -49,6 +52,10 @@ Meaning                                 Offset        Length        Min Value   
 - X                                     0x236e        2
 - Y                                     0x2372        2
 - Z                                     0x2376        2
+- Walking Pokémon
+  - X                                   0x23be
+  - Y                                   0x23c2
+  - Z                                   0x23c6
 - Mail                                  0x3fa8
 - Fashion Case                          0x3f64
   - Accessories                         0x3f64
@@ -88,4 +95,6 @@ Meaning                                 Offset        Length        Min Value   
   - Box 17                              0x205f0
   - Box 18                              0x215e0
 - current box                           0x21700?
+- Box names                             0x21708
+- Box Wallpapers                        0x219d8
 - Storage block checksum                0x21a0e

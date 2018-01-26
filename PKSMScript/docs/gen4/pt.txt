@@ -2,17 +2,17 @@
 
 Meaning                                 Offset        Length        Min Value   Max Value
 - Adventure Info                        0
-  - Seconds To Start                    0x34
-  - Seconds To Fame                     0x3c
+  - Seconds To Start                    0x34          4
+  - Seconds To Fame                     0x3c          4
 - Trainer1                              0x68
   - OT (name)                           0x68          0x10?
   - TID                                 0x78          2             0           65535
   - SID                                 0x7a          2             0           65535
   - money                               0x7c          4             0           999999
   - gender                              0x7e          1             0           1
-  - language                            0x7f          1
-  - badges                              0x80          1
-  - sprite                              0x81          1
+  - language                            0x7f          1             0           8
+  - badges                              0x80          1             0           255
+  - multiplayer avatar                  0x81          1
   - Game Corner coins                   0x88          2             0           50000
   - Played Hours                        0x8a          2             0           999
   - Played Minutes                      0x8c          1             0           59
@@ -28,9 +28,12 @@ Meaning                                 Offset        Length        Min Value   
   - balls                               0xcec
   - battle                              0xd28
 - Event Const                           0xdac
+- starter                               0xe0c         2
+- Lotto number                          0xe24         2
 - Prints                                0xe4a
 - Event Flag                            0xfec
 - Fly                                   0x1122
+- has obtained lotto prize              0x1141        1             0           1
 - Poketch                               0x1162
   - unlocked apps                       0x1161        1             0           25
   - Current App                         0x1162        1
@@ -70,6 +73,7 @@ Meaning                                 Offset        Length        Min Value   
   - Dex upgrade 1                       0x1642
   - Dex upgrade 3                       0x1643
 - Daycare                               0x1654
+- Rival name                            0x27e8
 - Hall Stat                             0x2820
 - X                                     0x287e        2
 - Y                                     0x2882        2
@@ -97,6 +101,11 @@ Meaning                                 Offset        Length        Min Value   
   - ?                                   0x696c
   - ?                                   0x699c
 - BP                                    0x7234        2             0           9999
+- Safari Zone Pokémon                   0x7f24        4
+- Swarm Pokémon                         0x7f28        4
+- Trophy Garden Pokémon
+  - today                               0x7f30        1
+  - yesterday                           0x7f32        1
 - Honey                                 0x7f38
 - Wondercard flags                      0xb4c0
 - Wondercard data                       0xb5c0

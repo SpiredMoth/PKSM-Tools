@@ -2,17 +2,17 @@
 
 Meaning                                 Offset        Length        Min Value   Max Value
 - Adventure Info                        0
-  - seconds to start                    0x34
-  - seconds to fame                     0x3c
+  - seconds to start                    0x34          4
+  - seconds to fame                     0x3c          4
 - Trainer1                              0x64
   - OT (name)                           0x64          0x10?
   - TID                                 0x74          2             0           65535
   - SID                                 0x76          2             0           65535
   - money                               0x78          4             0           999999
   - gender                              0x7c          1             0           1
-  - language                            0x7d
-  - badges                              0x7e
-  - sprite                              0x7f
+  - language                            0x7d          1             0           8
+  - badges                              0x7e          1             0           255
+  - multiplayer avatar                  0x7f          1
   - Game Corner coins                   0x84          2             0           50000
   - Played hours                        0x86          2             0           999
   - Played minutes                      0x88          1             0           59
@@ -28,14 +28,18 @@ Meaning                                 Offset        Length        Min Value   
   - ball                                0xce0
   - battle                              0xd1c
 - Event const                           0xd9c
+  - Starter                             0xdfc         2
+  - Lotto number                        0xe14         2
   - Darkrai?                            0xe22
   - Palkia?                             0xecc
 - Event flags                           0xfdc
   - Darkrai?                            0x1027
 - Fly                                   0x1112
+- has obtained Lotto prize              0x1131        1             0           1
 - Poketch
+  - enabled                             0x114c        1             0           1
   - unlocked apps                       0x114d        1             0           25
-  - current app                         0x114e        1
+  - current app                         0x114e        1             0           25
   - Apps
     - Digital Clock                     0x114f        1             0           1
     - Calculator                        0x1150        1             0           1
@@ -65,31 +69,59 @@ Meaning                                 Offset        Length        Min Value   
   - Pedometer steps                     0x116c?       2?            0           99999?
   - ?                                   0x1170?       1             0           1
   - Dot Artist byte                     0x1175
-- M                                     0x1238        2
-- PokeDex                               0x12dc
-  - dex upgrade 1                       0x1414
+- Map ID                                0x1238        2
+- Pokédex                               0x12dc
   - dex upgrade 2                       0x1404
-  - dex upgrade 3                       0x1415
   - dex upgrade 4                       0x1413
+  - Sinnoh Pokédex                      0x1414
+  - National Pokédex                    0x1415
 - Daycare                               0x141c
+- Berry trees                           0x1e84
+- Rival's name                          0x25a8
 - X                                     0x25fa        2
 - Y                                     0x25fe        2
 - Z                                     0x2602        2
 - Underground stats
-  - people met                          0x3a2c        2             0           ?
-  - gifts                               0x3a30
-  - spheres                             0x3a38
-  - fossils                             0x3a3c
-  - traps avoided                       0x3a44
-  - traps triggered                     0x3a48
+  - people met                          0x3a2c        4             0           999999
+  - gifts                               0x3a30        4             0           999999
+  - spheres                             0x3a38        4             0           999999
+  - fossils                             0x3a3c        4             0           999999
+  - traps avoided                       0x3a44        4             0           999999
+  - traps triggered                     0x3a48        4             0           999999
   - flags                               0x3a60        4             0           999999
 - Fashion Case                          0x4ba8
   - Accessories                         0x4ba8
   - Backdrops                           0x4bd0
 - Mail                                  0x4bec
+- Poffin Case                           0x5050
+- Trainer Card signature                0x5904
+- Score                                 0x5f08        4             0           999999
+- Pokémon caught                        0x5f2c        4             0           999999
+- Pokémon met fishing                   0x5f30        4             0           999999
+- Pokémon eggs                          0x5f34        4             0           999999
+- Pokémon defeated                      0x5fac        4             0           999999
 - BFF                                   0x5fca
+  - Single wins                         0x5fca        2             0           9999
+  - Consecutive Single wins             0x5fcc        2             0           9999
+  - Double wins                         0x5fce        2             0           9999
+  - Consecutive Double wins             0x5fd0        2             0           9999
+  - Multi wins                          0x5fd2        2             0           9999
+  - Consecutive Multi wins              0x5fd4        2             0           9999
+  - Link Multi wins                     0x5fd6        2             0           9999
+  - Consecutive Link Multi wins         0x5fd8        2             0           9999
+  - Wi-Fi wins                          0x5fda        2             0           9999
+  - Consecutive Wi-Fi wins              0x5fdc        2             0           9999
+- Contests won                          0x5fe2        2             0           9999
+- Ribbons                               0x5fe6        2             0           9999
+- Capsules in PC                        0x6050
 - BP                                    0x65f8        2             0           9999
-- Honey                                 0x72e4
+- Safari Zone Pokémon                   0x72d0        4
+- Swarm Pokémon                         0x72d4        4
+- Trophy Garden Pokémon
+  - today                               0x72dc        1
+  - yesterday                           0x72de        1
+- Honey Trees                           0x72e4
+- GTS Pokémon                           0x73e8
 - Wondercard flags                      0xa6d0
 - Wondercard Data                       0xa7fc
 - General Block save count              0xc0f0
@@ -114,3 +146,4 @@ Meaning                                 Offset        Length        Min Value   
   - Box 17                              0x1c004
   - Box 18                              0x1cff4
 - Storage block checksum                0x1e2de
+- Hall of Fame block                    0x20000
