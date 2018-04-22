@@ -212,6 +212,19 @@ Meaning                                 Offset        Length        Min Value   
 - (Game Sync save)                      0x6a800
 - (Poke Diary save)                     0x6aa00
 - Battle Tree                           0x6b200
+  - Streak
+    - current Regular Singles           0x6b200
+    - current Super Singles             0x6b202
+    - max Regular Singles               0x6b204
+    - max Super Singles                 0x6b206
+    - current Regular Doubles           0x6b208
+    - current Super Doubles             0x6b20a
+    - max Regular Doubles               0x6b20c
+    - max Super Doubles                 0x6b20e
+    - current Regular Multi             0x6b210
+    - current Super Multi               0x6b212
+    - max Regular Multi                 0x6b214
+    - max Super Multi                   0x6b216
 - Daycare                               0x6b400
   - slot 1                              0x6b401
   - slot 2                              0x6b4ea
