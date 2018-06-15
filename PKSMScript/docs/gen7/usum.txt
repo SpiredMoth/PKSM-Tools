@@ -65,6 +65,17 @@ Meaning                                 Offset        Length        Min Value   
     - Partner Cap Pikachu               0x280a        1
   - Hall of Fame                        0x2838
 - Pokédex                               0x2c00
+  - owned                               0x2c88
+  - seen
+    - normal male                       0x2cf0
+    - normal female                     0x2d7c
+    - shiny male                        0x2e08
+    - shiny female                      0x2e94
+  - display
+    - normal male                       0x2f20
+    - normal female                     0x2fac
+    - shiny male                        0x3038
+    - shiny female                      0x30c4
   - language flags                      0x3150
 - GTS                                   0x3c00
 - Fused                                 0x4000

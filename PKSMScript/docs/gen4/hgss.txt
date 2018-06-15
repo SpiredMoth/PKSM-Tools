@@ -44,9 +44,18 @@ Meaning                                 Offset        Length        Min Value   
   - X                                   0x123c
   - Y                                   0x1240
 - PokeDex                               0x12b8
+  - owned flags                         0x12bc        62
+  - Deoxys forms 1                      0x12fb        1
+  - seen flags                          0x12fc        62
+  - Deoxys forms 2                      0x133b        1
+  - first gender                        0x133c        62
+  - second gender                       0x137c        62
+  - forms                               0x13c0        32
+  - language flags                      0x13fc
   - dex upgrade 1                       0x15ee
   - dex upgrade 2                       0x15ef
   - dex upgrade 3                       0x15ed
+  - forms 2                             0x15f0        7
 - Daycare                               0x15fc
 - Hall stat                             0x230c
 - X                                     0x236e        2

@@ -140,8 +140,27 @@ Meaning                                 Offset        Length        Min Value   
 - Event const                           0x14a00
   - flag                                0x14cfc
 - Pokédex                               0x15000
+  - owned - Gen 6 native                0x15008
+  - seen
+    - normal male                       0x15068
+    - normal female                     0x150c8
+    - shiny male                        0x15128
+    - shiny female                      0x15188
+  - display
+    - normal male                       0x151e8
+    - normal female                     0x15248
+    - shiny male                        0x152a8
+    - shiny female                      0x15308
+  - forms                               0x15368
+    - seen
+      - normal                          0x15368
+      - shiny                           0x15380
+    - display
+      - normal                          0x15398
+      - shiny                           0x153b0
   - language flags                      0x153c8
   - Spinda                              0x15648
+  - owned - previous gen                0x1564a
 - Fused                                 0x16000
 - O-Power                               0x16a00
 - User metadata                         0x17000

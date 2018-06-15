@@ -140,6 +140,24 @@ Meaning                                 Offset        Length        Min Value   
   - ash counter                         0x14a78
   - flag                                0x14cfc
 - Pokédex                               0x15000
+  - owned                               0x15008
+  - seen
+    - normal male                       0x15068
+    - normal female                     0x150c8
+    - shiny male                        0x15128
+    - shiny female                      0x15188
+  - display
+    - normal male                       0x151e8
+    - normal female                     0x15248
+    - shiny male                        0x152a8
+    - shiny female                      0x15308
+  - forms
+    - seen
+      - normal                          0x15368
+      - shiny                           0x1538e
+    - display
+      - normal                          0x153b4
+      - shiny                           0x153da
   - language flags                      0x15400
   - Spinda                              0x15680
   - encounter count                     0x15686

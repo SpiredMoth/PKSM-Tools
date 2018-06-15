@@ -87,6 +87,23 @@ Meaning                                 Offset        Length        Min Value   
   - trainer sayings                     ?
 - Entralink (level & powers etc.)       0x21300
 - PokeDex                               0x21600
+  - owned flags                         0x21608
+  - seen flags
+    - normal male                       0x2165c
+    - normal female                     0x216b0
+    - shiny male                        0x21704
+    - shiny female                      0x21758
+  - display
+    - normal male                       0x217ac
+    - normal female                     0x21800
+    - shiny male                        0x21854
+    - shiny female                      0x218a8
+  - form seen
+    - normal                            0x218fc
+    - shiny                             0x21905
+  - form display
+    - normal                            0x2190e
+    - shiny                             0x21917
   - language flags                      0x21920
 - Swarm and overworld info              0x21b00
   - swarm                               0x21b2c

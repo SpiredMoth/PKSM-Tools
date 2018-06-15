@@ -43,6 +43,17 @@ Meaning                                 Offset        Length        Min Value   
   - event flag                          0x23d0
   - Hall of Fame                        0x25c0
 - Pokedex                               0x2a00
+  - owned                               0x2a88
+  - seen
+    - normal male                       0x2af0
+    - normal female                     0x2b7c
+    - shiny male                        0x2c08
+    - shiny female                      0x2c94
+  - display
+    - normal male                       0x2d20
+    - normal female                     0x2dac
+    - shiny male                        0x2e38
+    - shiny female                      0x2ec4
   - language flags                      0x2f50
 - GTS                                   0x3a00
 - Fused                                 0x3e00

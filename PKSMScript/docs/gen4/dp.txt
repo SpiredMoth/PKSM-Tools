@@ -71,10 +71,17 @@ Meaning                                 Offset        Length        Min Value   
   - Dot Artist byte                     0x1175
 - Map ID                                0x1238        2
 - Pokédex                               0x12dc
-  - dex upgrade 2                       0x1404
+  - owned flags                         0x12e0        62
+  - Deoxys forms 1                      0x131f        1
+  - seen flags                          0x1320        62
+  - Deoxys forms 2                      0x135f        1
+  - first gender                        0x1360        62
+  - second gender                       0x13a0        62
+  - forms                               0x13e4        32
+  - language flags                      0x1404
   - dex upgrade 4                       0x1413
   - Sinnoh Pokédex                      0x1414
-  - National Pokédex                    0x1415
+  - National Pokédex upgrade            0x1415
 - Daycare                               0x141c
 - Berry trees                           0x1e84
 - Rival's name                          0x25a8

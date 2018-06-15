@@ -68,10 +68,19 @@ Meaning                                 Offset        Length        Min Value   
   - Dot Artist byte                     0x1189
 - M                                     0x1280        2
 - PokeDex                               0x1328
+  - owned flags                         0x132c        62
+  - Deoxys forms 1                      0x136b        1
+  - seen flags                          0x136c        62
+  - Deoxys forms 2                      0x13ab        1
+  - first gender                        0x13ac        62
+  - second gender                       0x13ec        62
+  - forms                               0x1430        32
+  - language flags                      0x1450
   - Dex upgrade 2                       0x1640
   - Dex upgrade 4                       0x1641
   - Dex upgrade 1                       0x1642
   - Dex upgrade 3                       0x1643
+  - forms 2                             0x1644        6
 - Daycare                               0x1654
 - Rival name                            0x27e8
 - Hall Stat                             0x2820
