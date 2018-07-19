@@ -19,7 +19,7 @@ const generate = (args) => {
         crlfDelay: Infinity
     });
     rl.on('line', (line) => {
-        if (line.length || line.charAt(0) !== "#") {
+        if (line.length && line.charAt(0) !== "#") {
             line = line.replace(/\\/g, '/');
 
             let argGroups = line.split(' -i ');
@@ -69,16 +69,16 @@ const main = (args) => {
                 const gameDir = join('scripts', game.lower());
                 fs.mkdir(gameDir, (err) => {
                     if (err) {
-                        console.log(`There was an error creating ${gameDir}`);
+                        console.log(`There was an error creating /${gameDir}`);
                         console.error(err);
-                        console.log(`Scripts for ${game} compiled successfully but not moved into ${gameDir}`);
+                        console.log(`Scripts for ${game} compiled successfully but not moved into /${gameDir}`);
                         return;
                     }
 
                     scriptNames[game].forEach((n) => {
                         fs.rename(`${n}.pksm`, join(gameDir, `${n}.pksm`), (err) => {
                             if (err) {
-                                console.log(`An error occurred moving ${n}.pksm to ${gameDir}`);
+                                console.log(`An error occurred moving ${n}.pksm to /${gameDir}`);
                                 console.error(err);
                             }
                         });
