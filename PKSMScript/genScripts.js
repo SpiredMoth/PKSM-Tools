@@ -29,10 +29,11 @@ const generate = (args) => {
 
             argGroups = argGroups.map((v) => {
                 const argGroup = ['-i'];
-                const spaces = [v.indexOf(' '), v.indexOf(' ', space1 + 1), v.lastIndexOf(' ')];
+                const spaces = [v.indexOf(' '), v.lastIndexOf(' ')];
+                spaces.splice(1, 0, v.indexOf(' ', spaces[0] + 1));
                 argGroup.push(v.substring(0, spaces[0]));                   // offset
                 argGroup.push(v.subString(spaces[0] + 1, spaces[1]));       // length
-                argGroup.push(v.substring(space[1] + 1, spaces[2]));        // payload
+                argGroup.push(v.substring(spaces[1] + 1, spaces[2]));       // payload
                 argGroup.push(v.substr(spaces[2]) + 1);                     // repeat
                 return argGroup;
             });
@@ -43,7 +44,7 @@ const generate = (args) => {
     });
 };
 
-const main = (args) => {
+const genScripts = (args) => {
     args.splice(0, 2);
     const gamesList = args.length ? args : games;
     fs.rmdir('scripts', (err) => {
@@ -56,7 +57,7 @@ const main = (args) => {
 
         fs.mkdir('scripts', (err) => {
             if (err) {
-                console.log(`There was an error recreating /scripts`);
+                console.log(`There was an error creating /scripts`);
                 console.error(err);
                 console.log('Finishing without creating any PKSM scripts');
                 return;
@@ -71,14 +72,14 @@ const main = (args) => {
                     if (err) {
                         console.log(`There was an error creating /${gameDir}`);
                         console.error(err);
-                        console.log(`Scripts for ${game} compiled successfully but not moved into /${gameDir}`);
+                        console.log(`Scripts for ${game} compiled successfully but not moved from /scripts into /${gameDir}`);
                         return;
                     }
 
                     scriptNames[game].forEach((n) => {
                         fs.rename(`${n}.pksm`, join(gameDir, `${n}.pksm`), (err) => {
                             if (err) {
-                                console.log(`An error occurred moving ${n}.pksm to /${gameDir}`);
+                                console.log(`An error occurred moving ${n}.pksm from /scripts to /${gameDir}`);
                                 console.error(err);
                             }
                         });
@@ -89,7 +90,7 @@ const main = (args) => {
     });
 };
 
-module.exports = main;
+module.exports = genScripts;
 
 // execute if called directly from command line
 if (require.main === module) {
