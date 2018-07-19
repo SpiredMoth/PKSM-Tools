@@ -36,13 +36,13 @@ const pksmScript = (args) => {
             try {
                 pldBuf = fs.readFileSync(pldArg);
             } catch (e) {
-                console.log(`There was an error trying to read file ${payload}`);
+                console.log(`There was an error trying to read file ${pldArg}`);
                 console.error(e);
                 continue;
             }
         }
 
-        buf = Buffer.concat([ofs, lenBuf, pldBuf, rpt]);
+        buf = Buffer.concat([ofsBuf, lenBuf, pldBuf, rptBuf]);
 
         output.write(buf);
     }
