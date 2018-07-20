@@ -35,7 +35,7 @@ These scripts may cause problems in the unlikely event you should ever have to g
 ---
 
 ## Building Scripts
-See the [docs README](PKSMScript/docs/README.md)
+See the [docs README](./docs/README.md)
 
 
 ## .pksm file format
