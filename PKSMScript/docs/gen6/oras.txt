@@ -163,6 +163,33 @@ Meaning                                 Offset        Length        Min Value   
   - encounter count                     0x15686
 - Fused                                 0x16a00
 - O-Power                               0x17400
+  - Bargain MAX                         0x17400
+  - Hatching 1-S                        0x17401
+  - EXP MAX                             0x17405
+  - Bargain 1-S                         0x17406
+  - Prize MAX                           0x1740a
+  - Prize 1-S                           0x1740b
+  - Hatching MAX                        0x1740f
+  - EXP 1-S                             0x17410
+  - Capture MAX                         0x17414
+  - Capture 1-S                         0x17415
+  - Restore MAX                         0x17419
+  - Encounter 1-3                       0x1741a
+  - Stealth 1-3                         0x1741d
+  - HP Restore 1-3                      0x17420
+  - PP Restore 1-3                      0x17423
+  - Befriend MAX                        0x17426
+  - Befriending 1-S                     0x17427
+  - (unused)                            0x1742b
+  - Attack 1-3                          0x1742c
+  - Defense 1-3                         0x1742f
+  - Special Attack 1-3                  0x17432
+  - Special Defense 1-3                 0x17435
+  - Speed 1-3                           0x17438
+  - Critical Hit 1-3                    0x1743b
+  - Accuracy 1-3                        0x1743e
+  - energy                              0x17441
+  - ? usage                             0x17442
 - GTS                                   0x18200
 - Repel, swarm?, overworld etc.         0x18800
 - Wi-Fi Tournament data                 0x18c00
