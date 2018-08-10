@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const fs = require('fs');
+const { createReadStream, createWriteStream } = require('fs');
 
 /** argparse code (Python 3)
 
@@ -23,11 +23,11 @@ const dumpData = (args) => {
 
     let wasError = false;
 
-    const readable = fs.createReadStream(input, {
+    const readable = createReadStream(input, {
         start: offset,
-        end: offset + len - 1,
+        end: (offset + len) - 1,
     });
-    const writable = fs.createWriteStream(output);
+    const writable = createWriteStream(output);
     readable.pipe(writable);
 
     readable.on('error', (err) => {
@@ -42,10 +42,11 @@ const dumpData = (args) => {
         console.error(err);
         readable.destroy();
     });
-
-    if (!wasError) {
-        console.log('Dumping completed successfully!');
-    }
+    writable.on('finish', () => {
+        if (!wasError) {
+            console.log('Dumping completed successfully!');
+        }
+    });
 };
 
 module.exports = dumpData;

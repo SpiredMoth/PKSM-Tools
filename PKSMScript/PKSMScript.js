@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-const fs = require('fs');
+/* eslint no-continue: "off" */
+const { createWriteStream, readFileSync } = require('fs');
+
+const cli = require.main === module;
 
 /** argparse code (Python 3)
 
@@ -10,31 +13,30 @@ parser.add_argument('-i', action = 'append', nargs = 4, metavar = ('ofs', 'len',
 
 const pksmScript = (args) => {
     const scriptName = args.shift();
-    const output = fs.createWriteStream(`${scriptName}.pksm`);
+    const output = createWriteStream(`${scriptName}.pksm`);
 
-    // FIXME: does this work as a string or should it be a Buffer?
     output.write('PKSMSCRIPT');
-    // output.write(Buffer.from('PKSMSCRIPT'));
 
     while (args.length >= 5) {
-        let buf;
         const ofsBuf = Buffer.allocUnsafe(4);
         const lenBuf = Buffer.allocUnsafe(4);
         const rptBuf = Buffer.allocUnsafe(4);
 
         args.shift(); // discard '-i'
         ofsBuf.writeUInt32LE(+(args.shift()), 0);
-        lenBuf.writeUInt32LE(+(args.shift()), 0);
+        const len = +args.shift();
         const pldArg = args.shift();
         rptBuf.writeUInt32LE(+(args.shift()), 0);
 
+        lenBuf.writeUInt32LE(len, 0);
+
         let pldBuf;
         if ((+pldArg) >= 0) {
-            pldBuf = Buffer.allocUnsafe(lenBuf.readUInt32LE(0));
-            pldBuf.writeUInt32LE(+pldArg, 0);
+            pldBuf = Buffer.allocUnsafe(len).fill(0);
+            pldBuf.writeUIntLE(+pldArg, 0, len);
         } else {
             try {
-                pldBuf = fs.readFileSync(pldArg);
+                pldBuf = readFileSync(pldArg);
             } catch (e) {
                 console.log(`There was an error trying to read file ${pldArg}`);
                 console.error(e);
@@ -42,15 +44,17 @@ const pksmScript = (args) => {
             }
         }
 
-        buf = Buffer.concat([ofsBuf, lenBuf, pldBuf, rptBuf]);
+        const buf = Buffer.concat([ofsBuf, lenBuf, pldBuf, rptBuf]);
 
         output.write(buf);
     }
 
     output.end(() => {
-        console.log(`${scriptName}.pksm compiled`);
+        if (cli) {
+            console.log(`${scriptName}.pksm compiled`);
+        }
         if (args.length) {
-            console.log('Some arguments went unused');
+            console.log(`Some arguments went unused${!cli ? ` while compiling ${scriptName}.pksm` : ''}`);
         }
     });
 };
@@ -58,6 +62,6 @@ const pksmScript = (args) => {
 module.exports = pksmScript;
 
 // execute if called directly from command line
-if (require.main === module) {
+if (cli) {
     pksmScript(process.argv.slice(2));
 }
